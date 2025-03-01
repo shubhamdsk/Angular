@@ -1,0 +1,56 @@
+<div class="row">
+  <p>String Interpolation</p>
+  <div class="col-3">
+    <p>{{ title }}</p>
+  </div>
+
+  <div class="col-3">
+    <p>{{ currentDate | date }}</p>
+  </div>
+</div>
+
+<div class="row">
+  <p>Property Binding</p>
+  <div class="col-3">
+    <input type="text" class="form-control" />
+  </div>
+
+  <div class="col-3">
+    <input [type]="inputType" />
+  </div>
+
+  <div class="col-3">
+    <input type="text" [(ngModel)]="title" />
+  </div>
+</div>
+
+<div class="row">
+  <p>Event Binding</p>
+  <div class="col-3">
+    <button class="btn btn-primary" (click)="onSave()">Save</button>
+  </div>
+
+  <div class="col-3">
+    <button class="btn btn-secondary" (click)="onSaves($event)">Save</button>
+  </div>
+</div>
+
+<div class="row">
+  <p>Two-way Binding</p>
+  <div class="col-3">
+    <select
+      name="state"
+      id="state"
+      [(ngModel)]="selectedState"
+      class="form-control"
+    >
+      <option value="MH">MH</option>
+      <option value="MP">MP</option>
+      <option value="UP">UP</option>
+    </select>
+  </div>
+
+  <div class="col-3">
+    <p>{{ selectedState }}</p>
+  </div>
+</div>
