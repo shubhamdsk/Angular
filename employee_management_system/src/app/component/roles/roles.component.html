@@ -1,3 +1,19 @@
+<!-- <div class="row">
+  <div class="col-4">
+    <ul>
+      <li *ngFor="let user of roleList">{{ user.role }}</li>
+    </ul>
+  </div>
+
+  <div class="col-3">
+    <select>
+      <option *ngFor="let role of roleList" [value]="role.roleId">
+        {{ role.role }}
+      </option>
+    </select>
+  </div>
+</div>
+
 <div class="row">
   <p>String Interpolation</p>
   <div class="col-3">
@@ -52,5 +68,31 @@
 
   <div class="col-3">
     <p>{{ selectedState }}</p>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="col-12 ">
+    @if (isLoader) {
+   <div class="col-12 text-center">
+    <div class="spinner-border text-dark"></div>
+   </div>
+    } @else {
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Sr No</th>
+          <th>Role Name</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let role of roleList; let srno = index">
+          <td>{{ srno + 1 }}</td>
+          <td>{{ role.role }}</td>
+        </tr>
+      </tbody>
+    </table>
+    }
   </div>
 </div>
